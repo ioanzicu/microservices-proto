@@ -1,3 +1,3 @@
 module github.com/ioanzicu/microservices-proto/order
 
-go 1.22.5
+go 1.23
