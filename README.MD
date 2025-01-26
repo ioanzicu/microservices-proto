@@ -9,3 +9,24 @@
 ### Generate Shipping Stubs
 
     protoc -I ./shipping --go_out ./golang/shipping --go_opt paths=source_relative --go-grpc_out ./golang/shipping --go-grpc_opt paths=source_relative ./shipping/shipping.proto
+
+
+## Tag the commit
+
+
+### Create the tag
+
+    git tag v1.0
+
+### Push tags
+
+    git push origin v1.0
+
+    OR 
+
+    git push --tags
+
+### List tags
+
+    git tag
+

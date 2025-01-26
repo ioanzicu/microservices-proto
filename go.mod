@@ -1,3 +1,3 @@
 module github.com/ioanzicu/microservices-proto/golang/order
 
-go 1.17
+go 1.22.5
