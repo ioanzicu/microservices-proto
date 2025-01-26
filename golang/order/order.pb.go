@@ -7,21 +7,18 @@
 package order
 
 import (
-	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
-	math "math"
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	reflect "reflect"
+	sync "sync"
 )
 
-// Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
-
-// This is a compile-time assertion to ensure that this generated file
-// is compatible with the proto package it is being compiled against.
-// A compilation error at this line likely means your copy of the
-// proto package needs to be updated.
-const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
+const (
+	// Verify that this generated code is sufficiently up-to-date.
+	_ = protoimpl.EnforceVersion(20 - protoimpl.MinVersion)
+	// Verify that runtime/protoimpl is sufficiently up-to-date.
+	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
+)
 
 type CreateOrderRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -68,9 +65,9 @@ func (x *CreateOrderRequest) GetUserId() int64 {
 	return 0
 }
 
-func (m *CreateOrderRequest) GetOrderItems() []*OrderItem {
-	if m != nil {
-		return m.OrderItems
+func (x *CreateOrderRequest) GetOrderItems() []*OrderItem {
+	if x != nil {
+		return x.OrderItems
 	}
 	return nil
 }
@@ -121,16 +118,16 @@ func (x *OrderItem) GetProductCode() string {
 	return ""
 }
 
-func (m *OrderItem) GetUnitPrice() float32 {
-	if m != nil {
-		return m.UnitPrice
+func (x *OrderItem) GetUnitPrice() float32 {
+	if x != nil {
+		return x.UnitPrice
 	}
 	return 0
 }
 
-func (m *OrderItem) GetQuantity() int32 {
-	if m != nil {
-		return m.Quantity
+func (x *OrderItem) GetQuantity() int32 {
+	if x != nil {
+		return x.Quantity
 	}
 	return 0
 }
@@ -268,9 +265,9 @@ func (x *GetOrderResponse) GetUserId() int64 {
 	return 0
 }
 
-func (m *GetOrderResponse) GetOrderItems() []*OrderItem {
-	if m != nil {
-		return m.OrderItems
+func (x *GetOrderResponse) GetOrderItems() []*OrderItem {
+	if x != nil {
+		return x.OrderItems
 	}
 	return nil
 }
